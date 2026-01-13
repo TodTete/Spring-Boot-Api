@@ -18,7 +18,7 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre, email, documento;
+    private String nombre, email, telefono, documento;
 
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
@@ -30,6 +30,7 @@ public class Medico {
         this.id = null;
         this.nombre = datos.nombre();
         this.email = datos.email();
+        this.telefono = datos.telefono();
         this.documento = datos.documento();
         this.especialidad = datos.especialidad();
         this.direccion = new Direccion(datos.direccion());
