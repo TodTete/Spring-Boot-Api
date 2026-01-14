@@ -19,6 +19,7 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Boolean activo;
     private String nombre, email, telefono, documento;
 
     @Enumerated(EnumType.STRING)
@@ -29,6 +30,7 @@ public class Medico {
 
     public Medico(DatosRegistroM datos) {
         this.id = null;
+        this.activo = true;
         this.nombre = datos.nombre();
         this.email = datos.email();
         this.telefono = datos.telefono();
@@ -52,4 +54,7 @@ public class Medico {
         return nuevo != null ? nuevo : actual;
     }
 
+    public void eliminar() {
+        this.activo = false;
+    }
 }
