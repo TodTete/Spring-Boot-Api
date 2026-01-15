@@ -8,5 +8,4 @@ public record DatosActualizacionoM(
         String nombre,
         String telefono,
         DatosDireccion direccion) {
-
 }
