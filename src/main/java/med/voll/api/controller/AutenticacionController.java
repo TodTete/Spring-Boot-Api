@@ -3,7 +3,7 @@ package med.voll.api.controller;
 import jakarta.validation.Valid;
 import med.voll.api.domain.usuario.DatosAutenticacion;
 import med.voll.api.domain.usuario.Usuario;
-import med.voll.api.infra.security.DAtosTokenJWT;
+import med.voll.api.infra.security.DatosTokenJWT;
 import med.voll.api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +31,6 @@ public class AutenticacionController {
 
         var tokenJWT = tokenService.generarToken((Usuario) autenticacion.getPrincipal());
 
-        return ResponseEntity.ok(new DAtosTokenJWT(tokenJWT));
+        return ResponseEntity.ok(new DatosTokenJWT(tokenJWT));
     }
 }
