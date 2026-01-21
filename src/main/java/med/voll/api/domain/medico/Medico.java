@@ -46,7 +46,7 @@ public class Medico {
         this.telefono = valor(datos.telefono(), this.telefono);
 
         if (datos.direccion() != null) {
-            this.direccion.actualizarDireccion(datos.direccion());
+            this.direccion.actualizarDatos(datos.direccion());
         }
     }
 
