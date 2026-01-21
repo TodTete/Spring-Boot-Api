@@ -2,10 +2,12 @@ package med.voll.api.domain.consulta.validaciones;
 
 import med.voll.api.domain.ValidacionException;
 import med.voll.api.domain.consulta.DatosReservaConsulta;
+import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;
 
-public class ValidacionHorario {
+@Component
+public class ValidacionHorario implements  ValidadorConsulta{
 
     public void validar(DatosReservaConsulta datos){
         var fechaConsulta = datos.fecha();

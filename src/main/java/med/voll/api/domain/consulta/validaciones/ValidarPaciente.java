@@ -3,8 +3,10 @@ package med.voll.api.domain.consulta.validaciones;
 import med.voll.api.domain.ValidacionException;
 import med.voll.api.domain.consulta.DatosReservaConsulta;
 import med.voll.api.domain.paciente.PacienteRepository;
+import org.springframework.stereotype.Component;
 
-public class ValidarPaciente {
+@Component
+public class ValidarPaciente implements ValidadorConsulta{
 
     private PacienteRepository repository;
 
