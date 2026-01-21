@@ -24,8 +24,17 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             where
             c.fecha = :fecha
         )    
-        order bt rand()
+        order by rand()
         limit 1
     """)
     Medico elegirMedicoDisponible(Especialidad especialidad, @NotNull @Future LocalDateTime fecha);
+
+    @Query("""
+    select m.activo
+    from Medico m
+    where
+    m.id = :idMedico
+    """)
+
+    Boolean findActivoById(Long idMedico);
 }
